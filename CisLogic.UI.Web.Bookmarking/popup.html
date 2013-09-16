@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Popup</title>
+    <script src='jquery-1.10.1.min.js'></script>
+    <script src="jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="popup.js"></script>
+    <script src="database.js"></script>
+    <script src="jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="jquery.dataTables.min.js"></script>
+    <script src="jquery.dataTables.colReorderWithResize.js"></script>
+    <script src="jquery.msgBox.js"></script>
+    <script src="jquery.blockUI.js"></script>
+    <script src="FileSaver.min.js"></script>
+    <!--<script src="jquery.ddslick.min.js"></script>-->
+    <script src="chosen.jquery.min.js"></script>
+    <style type="text/css" title="currentStyle">
+        @import "datatable/demo_page.css";
+        @import "datatable/demo_table.css";
+    </style>
+    <link href="jquery.msgBox.css" rel="stylesheet">
+    <link href="chosen.css" rel="stylesheet">
+    <link href="cupertino/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css" type="text/css" media="screen" />
+</head>
+<body class="popup">
+    <div id="PopupDownloadFile">
+        <table>
+            <tr>
+                <td valign="middle">Dateiname:</td>
+                <td valign="middle">
+                    <input id="TbFileName" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="tabs">
+        <ul>
+            <li>
+                <a href="#tab-NewSource">Quelle</a></li>
+            <li>
+                <a href="#tab-Paratexte">Fundstellen</a></li>
+            <li>
+                <a href="#tab-SourceList">Übersichtsliste</a></li>
+            <li>
+                <a href="#tab-Options">Optionen</a></li>
+        </ul>
+        <div id="tab-NewSource">
+            <div class="FormTableBody">
+                <div>
+                    <div class="FormTableBody">
+                        <div class="FormTableRow">
+                            <div class="Col1">
+                                <div id="Div1">Quelle:</div>
+                            </div>
+                            <div class="Col2">
+                                <select id="CbExistingSource" data-placeholder="Neue Quelle" style="width: 355px;" class="chzn-select">
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="FormTableRow">
+                            <div class="Col1">
+                                <div id="Div2">Paratext-Typ:</div>
+                            </div>
+                            <div class="Col2">
+                                <select id="CbParaTextType" data-placeholder="Einen Paratext-Typ wählen ..." style="width: 355px;" class="chzn-select">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbURL">Doc-URL:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbURL" class="FormElement" readonly="readonly" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="Div3">Page-URL:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbPageURL" class="FormElement" readonly="readonly" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbLastName">Name:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbLastName" class="FormElement" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbFirstName">Vorname:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbFirstName" class="FormElement" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbPseudonym">Pseudonym:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbAlias" class="FormElement" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbTitle">Titel:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbTitle" class="FormElement" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbCollection">Sammlung:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbCollection" class="FormElement" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbEdition">Auflage:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbEdition" class="FormElement" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbPlaceOfPublishing">Verlagsort:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbPlaceOfPublishing" class="FormElement" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbPublisher">Verlag:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbPublisher" class="FormElement" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbYearOfPublishing">Publikationsjahr:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbYearOfPublishing" class="FormElement" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbFacFic">FakFik:</div>
+                        </div>
+                        <div class="Col2">
+                            <select id="CbFacFic" data-placeholder="Bitte wählen ..." style="width: 355px;" class="chzn-select">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbStructureDescriptive">Gliederung deskriptiv:</div>
+                        </div>
+                        <div class="Col2">
+                            <textarea id="TbIndexDescriptive" class="FormElement"></textarea>
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbNarrativePattern">Erzählmuster:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbNarrativePattern" class="FormElement" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbHeresy">Orthodoxie:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbOrthodoxyComment" class="FormElement" />
+                        </div>
+                    </div>
+                    <div class="FormTableRow">
+                        <div class="Col1">
+                            <div id="LbOrthodoxy">Häresie:</div>
+                        </div>
+                        <div class="Col2">
+                            <input type="text" id="TbHeresyComment" class="FormElement" />
+                        </div>
+                    </div>
+                    <hr />
+                    <div style="display: inline-block;">
+                        <button id="BtnUpdate">
+                            Speichern
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tab-Paratexte">
+            <div id="ParaTableArea">
+                <table cellpadding="0" cellspacing="0" border="0" class="display" id="ParaTextTable"></table>
+            </div>
+        </div>
+        <div id="tab-SourceList">
+            <div id="LitTableArea">
+                <table cellpadding="0" cellspacing="0" border="0" class="display" id="LitTable"></table>
+            </div>
+        </div>
+        <div id="tab-Options">
+            <div id="ExportButtonText">
+                Daten exportieren:
+            </div>
+            <div id="ExportButton">
+                <button id="BtExportLitList">Exportieren</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+body.popup
+{
+    font-size: 11px;
+}
+
+#LbPageUrl
+{
+    color: red;
+}
+
+.FormElement
+{
+    width: 350px;
+}
+
+textarea.FormElement
+{
+    width: 348px;
+    resize: vertical;
+}
+
+
+.FormTableBody
+{
+    display: table;
+    border-collapse: collapse;
+    width: 550px;
+}
+
+.FormTableRow
+{
+    display: table-row;
+    width: 550px;
+}
+
+.Col1, .Col2
+{
+    display: table-cell;
+    vertical-align: top;
+}
+
+.Col1
+{
+    width: 195px;
+}
+
+#tabs
+{
+    width: 775px;
+}
+
+div.tabs
+{
+    min-width: 500px;
+    min-height: 500px;
+}
+
+#ExportButton
+{
+    float: left;
+    margin-left: 150px;
+}
+
+#ExportButtonText
+{
+    float: left;
+    margin-top: 8px;
+}
+
+.ColURL
+{
+    width: 50px;
+    text-align: center;
+}
+
+#LitTableArea, #ParaTableArea
+{
+    width: 750px;
+    min-height: 450px;
+}
+
+.chzn-select
+{
+    width: 355px;
+}
+
+#TbFileName
+{
+    width: 200px;
+}

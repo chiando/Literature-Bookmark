@@ -1,0 +1,22 @@
+﻿{
+  "name" : "Literatur Lesezeichen",
+  "version" : "1.4",
+  "description" : "Speichert Lesezeichen für gallica.fr und archive.org",
+  "permissions": [ "tabs", "bookmarks", "unlimitedStorage", "http://gallica.bnf.fr/*", "http://*/*", "https://*/*" ],
+  //"options_page": "options.html",
+  "browser_action": {
+	 "default_icon": "contentSettings.png",
+	 "default_title": "Literatur Lesezeichen", 
+	 "default_popup": "popup.html"
+  },
+	//"background": {
+	//	"persistent": true,
+	//"scripts": ["background.js", "jquery-1.10.1.min.js"]
+	//"page": "background.html"
+	//},
+  "content_scripts": [ {
+	"js": [  "content.js" ],
+	"matches": ["http://gallica.bnf.fr/*", "http://*/*", "https://*/*"]
+  }],
+  "manifest_version": 2
+}
