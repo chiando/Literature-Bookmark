@@ -3,7 +3,7 @@ Literature-Bookmark
 
 Literature Bookmark
 
-Literature Bookmark bookmarks is a management system for bookmarks. It's a plugin for the chrome browser.
+Literature Bookmark is a management system for bookmarks. It's a plugin for the chrome browser.
 
 Currently the plugin is providing the following sources:
 
